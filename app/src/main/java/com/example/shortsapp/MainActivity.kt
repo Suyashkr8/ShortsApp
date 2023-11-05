@@ -9,6 +9,7 @@ import com.example.shortsapp.model.VideoModel
 import com.example.shortsapp.util.UiUtil
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.firestore
 
 class MainActivity : AppCompatActivity() {
@@ -36,6 +37,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.bm_profile -> {
                     UiUtil.showToast(this, "Profile")
+                    val intent = Intent(this,ProfileActivity::class.java)
+                    intent.putExtra("profile_user_id", FirebaseAuth.getInstance().currentUser?.uid )
+                    startActivity(intent)
                 }
             }
             false
