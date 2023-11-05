@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="click_to_upload_a_video">Click to upload a video</string>
+    <string name="write_your_caption_here">Write your caption here</string>
+    <string name="cancel">Cancel</string>
+    <string name="post">Post</string>
+</resources>

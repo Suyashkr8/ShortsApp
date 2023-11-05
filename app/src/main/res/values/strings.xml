@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ShortsApp</string>
+    <string name="signup">SignUp</string>
+    <string name="email">Email</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="login">Login</string>
+    <string name="password">password</string>
+    <string name="don_t_have_an_account">Don\'t have an account</string>
+    <string name="home">Home</string>
+    <string name="add_video">Add video</string>
+    <string name="profile">Profile</string>
+    <string name="click_to_upload_a_video">Click to upload a video</string>
+    <string name="write_your_caption_here">Write your caption here</string>
+    <string name="cancel">Cancel</string>
+    <string name="post">Post</string>
+</resources>

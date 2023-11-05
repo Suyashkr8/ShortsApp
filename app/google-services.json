@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1066537054374",
+    "project_id": "shortsapp-218fa",
+    "storage_bucket": "shortsapp-218fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066537054374:android:3e624203f887de55f60467",
+        "android_client_info": {
+          "package_name": "com.example.shortsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA4qiMlfgPdWhtaVTCsDwQ9uYCoE8ob1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
