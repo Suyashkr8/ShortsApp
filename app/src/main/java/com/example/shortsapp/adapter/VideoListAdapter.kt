@@ -1,11 +1,13 @@
 package com.example.shortsapp.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.shortsapp.ProfileActivity
 import com.example.shortsapp.R
 import com.example.shortsapp.databinding.ActivityVideoUploadBinding
 import com.example.shortsapp.databinding.VideoItemRowBinding
@@ -36,6 +38,12 @@ class VideoListAdapter(options: FirestoreRecyclerOptions<VideoModel>) : Firestor
                                 RequestOptions().placeholder(R.drawable.ic_profile)
                             )
                             .into(binding.profileIcon)
+
+                        binding.userDetailLayout.setOnClickListener {
+                            val intent = Intent(binding.userDetailLayout.context, ProfileActivity::class.java)
+                            intent.putExtra("profile_user_id", id )
+                            binding.userDetailLayout.context.startActivity(intent)
+                        }
 
                     }
                 }
