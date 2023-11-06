@@ -32,7 +32,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var profileUserId : String
     private lateinit var currentUserId : String
     private lateinit var photoLauncher: ActivityResultLauncher<Intent>
-    lateinit var adapter: ProfileVideoAdapter
+    private lateinit var adapter: ProfileVideoAdapter
 
     private lateinit var profileUserModel : UserModel
     override fun onCreate(savedInstanceState: Bundle?) {
