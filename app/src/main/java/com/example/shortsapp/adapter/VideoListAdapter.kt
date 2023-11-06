@@ -35,7 +35,7 @@ class VideoListAdapter(options: FirestoreRecyclerOptions<VideoModel>) : Firestor
                         Glide.with(binding.profileIcon).load(profilePic)
                             .circleCrop()
                             .apply(
-                                RequestOptions().placeholder(R.drawable.ic_profile)
+                                RequestOptions().placeholder(R.drawable.icon_account_circle)
                             )
                             .into(binding.profileIcon)
 
