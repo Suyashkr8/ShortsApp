@@ -12,11 +12,16 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.example.shortsapp.adapter.ProfileVideoAdapter
 import com.example.shortsapp.databinding.ActivityProfileBinding
 import com.example.shortsapp.model.UserModel
+import com.example.shortsapp.model.VideoModel
+import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
@@ -27,6 +32,7 @@ class ProfileActivity : AppCompatActivity() {
     private lateinit var profileUserId : String
     private lateinit var currentUserId : String
     private lateinit var photoLauncher: ActivityResultLauncher<Intent>
+    lateinit var adapter: ProfileVideoAdapter
 
     private lateinit var profileUserModel : UserModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -60,6 +66,30 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
         getProfileDataFromFirebase()
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        val options = FirestoreRecyclerOptions.Builder<VideoModel>()
+            .setQuery(
+                Firebase.firestore.collection("videos")
+                    .whereEqualTo("uploaderId", profileUserId)
+                    .orderBy("createdTime", Query.Direction.DESCENDING),
+                VideoModel::class.java
+            ).build()
+        adapter = ProfileVideoAdapter(options)
+        binding.recyclerView.layoutManager = GridLayoutManager(this, 3)
+        binding.recyclerView.adapter = adapter
+    }
+
+    override fun onStart() {
+        super.onStart()
+        adapter.startListening()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        adapter.stopListening()
     }
 
     private fun followUnfollowUser(){

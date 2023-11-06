@@ -6,4 +6,8 @@
     <string name="write_your_caption_here">Write your caption here</string>
     <string name="cancel">Cancel</string>
     <string name="post">Post</string>
+    <string name="posts">Posts</string>
+    <string name="follower">Follower</string>
+    <string name="following">Following</string>
+    <string name="_0">0</string>
 </resources>
